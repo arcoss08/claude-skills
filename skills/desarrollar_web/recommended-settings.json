@@ -1,0 +1,25 @@
+{
+  "_comment": "Optional pre-authorization for desarrollar_web. Copy these entries into your ~/.claude/settings.json under permissions.allow. Covers build, images, and the Vercel draft-share capability. Scoped to this skill's own scripts, its Vercel MCP tools, and a few safe helpers — nothing destructive. The Vercel MCP connection itself must be added once, outside this file, with: claude mcp add --transport http vercel https://mcp.vercel.com",
+
+  "permissions": {
+    "allow": [
+      "Bash(python *desarrollar_web/scripts/*.py*)",
+      "Bash(python3 *desarrollar_web/scripts/*.py*)",
+      "Bash(bash *desarrollar_web/scripts/*.sh*)",
+      "Bash(node *desarrollar_web/scripts/*.mjs*)",
+      "Bash(powershell *desarrollar_web/scripts/*.ps1*)",
+
+      "Bash(mkdir -p *)",
+      "Bash(ls *)",
+      "Bash(cp *)",
+      "Bash(grep *)",
+      "Bash(command -v *)",
+      "Bash(which *)",
+
+      "Bash(python -m http.server *)",
+      "Bash(python3 -m http.server *)",
+
+      "mcp__vercel__*"
+    ]
+  }
+}
